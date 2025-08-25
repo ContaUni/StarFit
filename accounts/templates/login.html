@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Entrar</title>
+    <link rel="stylesheet" href="{% static 'seu_app/css/auth.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div class="auth-container">
+    <h2>Entrar</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Entrar</button>
+    </form>
+    <p class="switch-link">Não tem conta? <a href="{% url 'signup' %}">Cadastrar</a></p>
+</div>
+<script src="{% static '/js/auth.js' %}"></script>
+</body>
+</html>
